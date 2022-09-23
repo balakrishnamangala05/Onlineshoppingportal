@@ -1,0 +1,187 @@
+Creating Database for Onlineshoppingportal
+
+
+
+Creating customer collection
+ db.Customer.insertOne({customername:"Krishna",customeremail:"krishna@gmail.com",customermobno:"8822331122",customerwallet:"6000",Address:{customercity:"hyderabad",customerpincode:"500072",customeraddress:"402/40 kukatpally"}});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("632d64b4d92fd2ceb41bb522")
+}
+> db.Customer.insertOne({customername:"Hemanth",customeremail:"hemanth@gmail.com",customermobno:"8212331122",customerwallet:"4000",Address:{customercity:"hyderabad",customerpincode:"500054",customeraddress:"502/40 Uppal"}});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("632d64ead92fd2ceb41bb523")
+}
+> db.Customer.insertOne({customername:"Jayanth",customeremail:"jayanth@gmail.com",customermobno:"9212331122",customerwallet:"5000",Address:{customercity:"hyderabad",customerpincode:"500548",customeraddress:"902/40 ECIL"}});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("632d651dd92fd2ceb41bb524")
+}
+> db.Customer.insertOne({customername:"Nandini",customeremail:"nandini@gmail.com",customermobno:"8712331122",customerwallet:"6000",Address:{customercity:"hyderabad",customerpincode:"500578",customeraddress:"602/40 LB Nagar"}});
+
+Creating Orders Collection
+db.Orders.insertOne({orderstatus:"shipped",orderamount:"2000"});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("632d6145d92fd2ceb41bb516")
+}
+> db.Orders.insertOne({orderstatus:"delivered",orderamount:"1000"});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("632d6151d92fd2ceb41bb517")
+}
+> db.Orders.insertOne({orderstatus:"Not delivered",orderamount:"2500"});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("632d6163d92fd2ceb41bb518")
+}
+> db.Orders.insertOne({orderstatus:"Shipped",orderamount:"800"});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("632d6172d92fd2ceb41bb519")
+}
+
+
+
+ db.createCollection("Vendors");
+{ "ok" : 1 }
+> db.Vendors.insertOne({vendorname:"Suresh",vendoremail:"suresh@gmail.com",vendormobno:"7772223331",vendorwallet:"7000"});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("632d626ed92fd2ceb41bb51a")
+}
+> db.Vendors.insertOne({vendorname:"Ramesh",vendoremail:"ramesh@gmail.com",vendormobno:"9573323331",vendorwallet:"5000"});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("632d6286d92fd2ceb41bb51b")
+}
+> db.Vendors.insertOne({vendorname:"Kiran",vendoremail:"kiran@gmail.com",vendormobno:"8673323331",vendorwallet:"6000"});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("632d62add92fd2ceb41bb51c")
+}
+> db.Vendors.insertOne({vendorname:"Ramu",vendoremail:"ramu@gmail.com",vendormobno:"8893323331",vendorwallet:"8000"});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("632d62d4d92fd2ceb41bb51d")
+}
+
+
+ db.createCollection("Products");
+{ "ok" : 1 }
+> db.Products.insertOne({productname:"Fastract",productcategory:"Watch",productprice:"2000"});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("632d635dd92fd2ceb41bb51e")
+}
+> db.Products.insertOne({productname:"Levis",productcategory:"Shirt",productprice:"1500"});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("632d6382d92fd2ceb41bb51f")
+}
+> db.Products.insertOne({productname:"Puma",productcategory:"Shoes",productprice:"2500"});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("632d63add92fd2ceb41bb520")
+}
+> db.Products.insertOne({productname:"Earpods",productcategory:"Oneplus",productprice:"3500"});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("632d63dfd92fd2ceb41bb521")
+}
+
+
+
+
+find all customers whose city is 'hyderabad'
+ db.Customer.find({"Address.customercity":"hyderabad"}).pretty();
+{
+        "_id" : ObjectId("632d64b4d92fd2ceb41bb522"),
+        "customername" : "Krishna",
+        "customeremail" : "krishna@gmail.com",
+        "customermobno" : "8822331122",
+        "customerwallet" : "6000",
+        "Address" : {
+                "customercity" : "hyderabad",
+                "customerpincode" : "500072",
+                "customeraddress" : "402/40 kukatpally"
+        }
+}
+{
+        "_id" : ObjectId("632d64ead92fd2ceb41bb523"),
+        "customername" : "Hemanth",
+        "customeremail" : "hemanth@gmail.com",
+        "customermobno" : "8212331122",
+        "customerwallet" : "4000",
+        "Address" : {
+                "customercity" : "hyderabad",
+                "customerpincode" : "500054",
+                "customeraddress" : "502/40 Uppal"
+        }
+}
+{
+        "_id" : ObjectId("632d651dd92fd2ceb41bb524"),
+        "customername" : "Jayanth",
+        "customeremail" : "jayanth@gmail.com",
+        "customermobno" : "9212331122",
+        "customerwallet" : "5000",
+        "Address" : {
+                "customercity" : "hyderabad",
+                "customerpincode" : "500548",
+                "customeraddress" : "902/40 ECIL"
+        }
+}
+{
+        "_id" : ObjectId("632d6551d92fd2ceb41bb525"),
+        "customername" : "Nandini",
+        "customeremail" : "nandini@gmail.com",
+        "customermobno" : "8712331122",
+        "customerwallet" : "6000",
+        "Address" : {
+                "customercity" : "hyderabad",
+                "customerpincode" : "500578",
+                "customeraddress" : "602/40 LB Nagar"
+        }
+}
+
+find productname,price from products
+ db.Products.find({},{"productname":1,"price":1}).pretty();
+{ "_id" : ObjectId("632d635dd92fd2ceb41bb51e"), "productname" : "Fastract" }
+{ "_id" : ObjectId("632d6382d92fd2ceb41bb51f"), "productname" : "Levis" }
+{ "_id" : ObjectId("632d63add92fd2ceb41bb520"), "productname" : "Puma" }
+{ "_id" : ObjectId("632d63dfd92fd2ceb41bb521"), "productname" : "Earpods" }
+> db.Products.find({},{"productname":1,"productprice":1}).pretty();
+{
+        "_id" : ObjectId("632d635dd92fd2ceb41bb51e"),
+        "productname" : "Fastract",
+        "productprice" : "2000"
+}
+{
+        "_id" : ObjectId("632d6382d92fd2ceb41bb51f"),
+        "productname" : "Levis",
+        "productprice" : "1500"
+}
+
+find orders where orderstatus is 'delivered'
+db.Orders.find({"orderstatus":"delivered"}).pretty();
+{
+        "_id" : ObjectId("632d6151d92fd2ceb41bb517"),
+        "orderstatus" : "delivered",
+        "orderamount" : "1000"
+}
+
+find all addresses whose pincode is 500072
+db.Customer.find({"Address.customerpincode":"500072"}).pretty();
+{
+        "_id" : ObjectId("632d64b4d92fd2ceb41bb522"),
+        "customername" : "Krishna",
+        "customeremail" : "krishna@gmail.com",
+        "customermobno" : "8822331122",
+        "customerwallet" : "6000",
+        "Address" : {
+                "customercity" : "hyderabad",
+                "customerpincode" : "500072",
+                "customeraddress" : "402/40 kukatpally"
+        }
+}
